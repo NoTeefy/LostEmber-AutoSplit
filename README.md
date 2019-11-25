@@ -1,3 +1,4 @@
+[![GitHub license](https://img.shields.io/github/license/NoTeefy/LostEmber-AutoSplit)](https://github.com/NoTeefy/LostEmber-AutoSplit/blob/master/LICENSE) || [![GitHub issues](https://img.shields.io/github/issues/NoTeefy/LostEmber-AutoSplit)](https://github.com/NoTeefy/LostEmber-AutoSplit/issues) 
 # LostEmber-AutoSplit
 Auto-Splitter for the game "Lost Ember" on PC
 
