@@ -11,6 +11,7 @@ Auto-Splitter for the game "Lost Ember" on PC
  This auto-splitter was successfully tested on the following versions of the game:
  
  **v1.0.16** - GOG (W10).
+ 
  **v1.0.0.12054** - STEAM (W10).
  This splitter may only work on the tested platforms. Please contact the author if you want it to work for another platform / operating system. 
  
