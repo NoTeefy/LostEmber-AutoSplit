@@ -1,6 +1,6 @@
 /*
     Lost Ember
-    Version: 0.0.2
+    Version: 0.0.3
     Author: NoTeefy
     Compatible Versions:
         GOG (PC) || W10 (functional) || W7 (untested, might not work)
@@ -16,7 +16,7 @@ state("LostEmber-Win64-Shipping") {}
 */
 startup {
     // init version & debug flag
-    vars.ver = "0.0.2";
+    vars.ver = "0.0.3";
     var debugEnabled = false;
 
     //adds a text component
@@ -78,7 +78,7 @@ startup {
 
     //define signature patterns (structures / AOB)
     vars.isLoadingSP = new SigScanTarget(0,
-        "3F 41 56 74 79 70 65 5F 69 ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 ??"
+        "3F 41 56 74 79 70 65 5F 69 ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 ?? ??"
     );
 
     // define general functions
