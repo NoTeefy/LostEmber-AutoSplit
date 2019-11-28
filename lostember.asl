@@ -1,6 +1,6 @@
 /*
     Lost Ember
-    Version: 0.0.1
+    Version: 0.0.2
     Author: NoTeefy
     Compatible Versions:
         GOG (PC) || W10 (functional) || W7 (untested, might not work)
@@ -16,7 +16,7 @@ state("LostEmber-Win64-Shipping") {}
 */
 startup {
     // init version & debug flag
-    vars.ver = "0.0.1";
+    vars.ver = "0.0.2";
     var debugEnabled = false;
 
     //adds a text component
@@ -78,7 +78,7 @@ startup {
 
     //define signature patterns (structures / AOB)
     vars.isLoadingSP = new SigScanTarget(0,
-        "65 42 00 00 34 43 00 00 34 43 00 00 34 43 00 00 34 43 E0 41" // needs an offset of +0x12
+        "3F 41 56 74 79 70 65 5F 69 ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 ??"
     );
 
     // define general functions
@@ -163,7 +163,7 @@ startup {
         var watcherList = new List<SortedDictionary<String, Tuple<SigScanTarget, int[], int, String, SortedDictionary<string, bool>, MemoryWatcher>>>(){
             new SortedDictionary<String, Tuple<SigScanTarget, int[], int, String, SortedDictionary<string, bool>, MemoryWatcher>>(){
                 {"isLoading",
-                    vars.tcStruct(vars.isLoadingSP, new int[]{ 0x28, 0x248, 0x35 }, 0x12, "bool", new SortedDictionary<string, bool>(){
+                    vars.tcStruct(vars.isLoadingSP, new int[]{ 0x98, 0x50, 0x28, 0x451 }, 0x17, "bool", new SortedDictionary<string, bool>(){
                         {"is64Bit", true}, 
                         {"isSingle", false},
                         {"ignoreNulls", false}
@@ -230,7 +230,7 @@ init {
 	vars.dbgOut("init{} - starting to search for the ingame memory region");
 	refreshRate = 1000/500;
     vars.proc = game;
-    ProcessModuleWow64Safe module = modules.Single(x => String.Equals(x.ModuleName, "lostember-win64-shipping.exe", StringComparison.OrdinalIgnoreCase));
+    ProcessModuleWow64Safe module = modules.Single(x => String.Equals(x.ModuleName, "PxPvdSDK_x64.dll", StringComparison.OrdinalIgnoreCase));
     vars.triggerInit(module);
     vars.dbgOut("init{} - done");
     refreshRate = 1000/7; // set cycle to refresh every 7ms
